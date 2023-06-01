@@ -39,6 +39,8 @@ public class Prompt extends JFrame{
     int currPlayer;
 
     Player[] players;
+
+    boolean gameReady;
     // x and y refer to Window Size, not rows and cols
     public Prompt(int x, int y, GameData gd, ImageLibrary il) {
         super("Deadwood Game"); // window name
@@ -79,7 +81,9 @@ public class Prompt extends JFrame{
         this.setVisible(true);
     }
 
-   
+   Player[] getPlayers() {
+    return this.players;
+   }
     // Question Player Amount Phase
     // 3 x 4
     // post:
@@ -214,11 +218,18 @@ public class Prompt extends JFrame{
                     il.cardLayout.next(il.cardHolder);
 
                     if(currPlayer == playerCount) {
-                        il.cardHolder.remove(0);
-                        il.cardLayout.next(il.cardHolder);
 
-                        cards.next(cardPanel);
+                        //il.cardHolder.remove(0);
+                        //il.cardLayout.next(il.cardHolder);
+
                         // go next stage
+                        
+                        BoardWindow bw = new BoardWindow(players, il);
+                        dispose();
+                        //cardPanel.add(bw);
+                        //cards.next(cardPanel);
+                        //System.exit(0);
+   
                     }
                     
                     currPlayer++;
@@ -228,9 +239,7 @@ public class Prompt extends JFrame{
                     notification.showMessageDialog(panelB, "Choose a different name, name is already taken or blank!");
                     
                 }
-                
-                
-
+            
                 
             }
         });

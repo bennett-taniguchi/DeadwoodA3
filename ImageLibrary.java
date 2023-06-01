@@ -79,7 +79,6 @@ public class ImageLibrary{
 
         // images.forEach(t->System.out.println(t.name));
         // quick render test below
-
         // JPanel cards = diceCarousel();
         // JFrame frame = new JFrame();
         // frame.setDefaultCloseOperation(0);
@@ -100,10 +99,6 @@ public class ImageLibrary{
         
         
         // panel of all labels, layout, insert layout into panel
-        
-
-       
-        
         
         //this = new JPanel(cardLayout);
         //this.cards.addFocusListener(this);
@@ -134,8 +129,6 @@ public class ImageLibrary{
             
         }
         
-
-  
         return cardHolder;
     }
 
