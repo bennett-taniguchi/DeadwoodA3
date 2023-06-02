@@ -1,6 +1,7 @@
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.awt.image.ImageObserver;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -8,7 +9,7 @@ import javax.swing.ImageIcon;
 // basically a wrapper class for Icon which has fields useful for describing the icon
 // because of this the icon can be anything that is 1-6
 
-public class ImageFile implements Icon{
+public class ImageFile  implements Icon{
     
     Image img;
     ImageIcon originalImg;
@@ -27,6 +28,7 @@ public class ImageFile implements Icon{
         this.name = name;
         this.parent = parent;
         
+        
        
      
         this.width = img.getIconWidth();
@@ -38,8 +40,7 @@ public class ImageFile implements Icon{
     
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
-       
-       
+        
         g.drawImage( this.img, x, y, c);
         
     }

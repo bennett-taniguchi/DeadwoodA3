@@ -27,9 +27,10 @@ public class Main {
         ImageLibrary il = new ImageLibrary("img/"); // points to folder of images
 
         // imageParse class?
-        Prompt win = new Prompt(1000, 750, gd, il); // will finalize with Player names, and Images, and Order
-
         
+        //Prompt win = new Prompt(1000, 750, gd, il); // will finalize with Player names, and Images, and Order
+
+        BoardWindow bw = new BoardWindow(null, il);
         
         
        

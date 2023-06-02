@@ -34,7 +34,7 @@ public class ImageLibrary{
     ArrayList<ImageFile> diceUsed;
     int currentDie;
     ImageLibrary (String path) {
-       super();
+       
        this.cardLayout = new CardLayout();
        this.cardHolder = new JPanel();
        this.cardHolder.setLayout(cardLayout);

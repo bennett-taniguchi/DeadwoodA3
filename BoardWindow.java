@@ -1,9 +1,13 @@
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
+import java.awt.Canvas;
 import java.awt.FlowLayout;
+import java.awt.Graphics;
 import java.awt.GridLayout;
+import java.awt.Image;
 
 public class BoardWindow extends JFrame{
      // JPanel cards = diceCarousel();
@@ -26,21 +30,30 @@ public class BoardWindow extends JFrame{
     // gridlayout rows, cols, hgaps, vgaps <- might be necessary
 
     // +card data, and +board data (to render)
+   
+    ImageLibrary il;
+    ImageFile boardImage;
+   
+    JPanel board;
+    
     BoardWindow(Player[] players, ImageLibrary il) {
-
+        super("Deadwood Game");
+        this.il = il;
+        
         this.setLayout(new FlowLayout());
 
-        this.setDefaultCloseOperation(0);
-        this.setTitle("Deadwood Game");
         this.setSize(3000,2500);
         this.setResizable(true);
-        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        this.boardImage = il.getImage("board");
+      
+
         // add board, options, players, history
 
         // board
-        ImageFile boardImage = il.getImage("board");
-        this.add(new JLabel(boardImage));
-
+        
+        
         // options (Actions)
        // this.add(new JButton("Actions"));
 
@@ -50,13 +63,14 @@ public class BoardWindow extends JFrame{
         // history
        // this.add(new JLabel("History"));
 
-        this.pack();
         this.setVisible(true);
     }
 
-
-    // should 
+   
+    // should work for drawing
     void placeIcon(ImageFile img, int x, int y, int width, int height) {
         
     }
+
+   
 }
